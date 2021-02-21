@@ -1,0 +1,10 @@
+version: "3"
+services:
+  kinopoisk-mysql:
+    image: mysql:8.0.17
+    restart: always
+    environment:
+      MYSQL_DATABASE: kinopoisk
+      MYSQL_ROOT_PASSWORD: netcracker123
+    ports:
+      - 3306:3306
