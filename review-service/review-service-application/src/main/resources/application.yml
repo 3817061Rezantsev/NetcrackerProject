@@ -1,0 +1,59 @@
+server:
+  address: 0.0.0.0
+  port: 8080
+  compression:
+    enabled: true
+
+spring:
+  jmx.enabled: true
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        ddl-auto: none
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect.storage_engine: innodb
+        enable_lazy_load_no_trans: true
+        jdbc.time_zone: UTC
+        hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        hibernate.naming.implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+  datasource:
+    url: jdbc:mysql://localhost:4306/review?characterEncoding=UTF-8&useLegacyDatetimeCode=false
+    username: root
+    password: netcracker123
+  liquibase:
+    change-log: classpath:/db/changelog/master.xml
+
+logging:
+  level:
+    com.netcracker.kinopoisk.review: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36}.%M:%line - %msg%n"
+    file:    "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36}.%M:%line - %msg%n"
+  file:
+    name: logs/review-service.log
+
+management:
+  endpoints:
+    web.exposure.include: health
+  health:
+    mail.enabled: false
+    ping.enabled: false
+    diskspace.enabled: false
+
+---
+# profile specific properties
+
+spring:
+  profiles: development
+  datasource:
+    url: jdbc:mysql://localhost:4306/review?characterEncoding=UTF-8&useLegacyDatetimeCode=false
+  jpa:
+    show-sql: true
+
+server:
+  port: 8091
+
+logging:
+  level:
+    com.netcracker.kinopoisk.review: DEBUG
