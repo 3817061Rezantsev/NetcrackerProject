@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<changeSet id="review-table-films-data" author="rezantsev">
+		<comment>Review Tables - Films Data</comment>
+		<sql>
+			insert into review.films (id, third_party_id) values ('e6626026-cd68-4938-87a6-61b194e137e0', 'Warner Bros');
+		</sql>
+		<rollback>
+			delete from review.films;
+		</rollback>
+	</changeSet>
+	
+</databaseChangeLog>

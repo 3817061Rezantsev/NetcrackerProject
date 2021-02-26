@@ -1,10 +1,19 @@
 version: "3"
 services:
-  kinopoisk-mysql:
+  catalog-db:
     image: mysql:8.0.17
     restart: always
     environment:
-      MYSQL_DATABASE: kinopoisk
+      MYSQL_DATABASE: catalog
       MYSQL_ROOT_PASSWORD: netcracker123
     ports:
-      - 3306:3306
+      - "3306:3306"
+
+  review-db:
+    image: mysql:8.0.17
+    restart: always
+    environment:
+      MYSQL_DATABASE: review
+      MYSQL_ROOT_PASSWORD: netcracker123
+    ports:
+      - "4306:3306"
