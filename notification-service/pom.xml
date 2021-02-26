@@ -24,5 +24,7 @@
 		<module>notification-service-api</module>
 		<module>notification-service-impl</module>
 		<module>notification-service-application</module>
+		<module>notification-service-web</module>
+		<module>notification-service-model</module>
 	</modules>
 </project>

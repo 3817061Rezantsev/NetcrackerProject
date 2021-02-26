@@ -1,0 +1,10 @@
+package com.netcracker.kinopoisk.moderation.impl;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/moderation")
+public class ModerationController {
+
+}

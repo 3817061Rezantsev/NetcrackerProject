@@ -24,5 +24,7 @@
 		<module>moderation-service-api</module>
 		<module>moderation-service-impl</module>
 		<module>moderation-service-application</module>
+		<module>moderation-service-web</module>
+		<module>moderation-service-model</module>
 	</modules>
 </project>

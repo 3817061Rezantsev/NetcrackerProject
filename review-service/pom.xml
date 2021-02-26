@@ -24,6 +24,8 @@
 		<module>review-service-api</module>
 		<module>review-service-impl</module>
 		<module>review-service-application</module>
+		<module>review-service-web</module>
+		<module>review-service-model</module>
 	</modules>
     
     

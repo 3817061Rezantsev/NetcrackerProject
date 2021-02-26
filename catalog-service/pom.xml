@@ -24,5 +24,7 @@
 		<module>catalog-service-api</module>
 		<module>catalog-service-impl</module>
 		<module>catalog-service-application</module>
+		<module>catalog-service-web</module>
+		<module>catalog-service-model</module>
 	</modules>
 </project>
