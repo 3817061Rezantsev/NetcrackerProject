@@ -16,7 +16,22 @@
 	<dependencies>
 		<dependency>
 			<groupId>KinoPoisk</groupId>
+			<artifactId>catalog-service-web</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>KinoPoisk</groupId>
+			<artifactId>catalog-service-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>KinoPoisk</groupId>
 			<artifactId>catalog-service-impl</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>KinoPoisk</groupId>
+			<artifactId>catalog-service-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -36,8 +51,8 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>

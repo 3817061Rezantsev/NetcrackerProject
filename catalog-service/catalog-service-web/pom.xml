@@ -17,7 +17,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>KinoPoisk</groupId>
-			<artifactId>catalog-service-api</artifactId>
+			<artifactId>catalog-service-impl</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

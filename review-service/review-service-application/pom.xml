@@ -16,7 +16,22 @@
 	<dependencies>
 		<dependency>
 			<groupId>KinoPoisk</groupId>
+			<artifactId>review-service-web</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>KinoPoisk</groupId>
 			<artifactId>review-service-impl</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>KinoPoisk</groupId>
+			<artifactId>review-service-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>KinoPoisk</groupId>
+			<artifactId>review-service-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -32,8 +47,12 @@
 			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
