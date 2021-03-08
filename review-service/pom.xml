@@ -18,6 +18,29 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+<<<<<<< HEAD
+		<mapstruct.version>1.4.2.Final</mapstruct.version>
+	</properties>
+
+	<modules>
+		<module>review-service-api</module>
+		<module>review-service-impl</module>
+		<module>review-service-application</module>
+		<module>review-service-web</module>
+		<module>review-service-model</module>
+	</modules>
+    <dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.mapstruct</groupId>
+				<artifactId>mapstruct</artifactId>
+				<version>${mapstruct.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+    
+</project>
+=======
 	</properties>
 
 	<modules>
@@ -30,3 +53,4 @@
     
     
 </project>
+>>>>>>> refs/remotes/origin/main

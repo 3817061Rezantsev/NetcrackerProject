@@ -14,8 +14,21 @@
 	</parent>
 	<dependencies>
 		<dependency>
+<<<<<<< HEAD
+			<groupId>KinoPoisk</groupId>
+			<artifactId>review-service-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
 	</dependencies>
 </project>
+=======
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+	</dependencies>
+</project>
+>>>>>>> refs/remotes/origin/main

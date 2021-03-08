@@ -16,6 +16,10 @@
 
 	<dependencies>
 		<dependency>
+<<<<<<< HEAD
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+=======
 			<groupId>KinoPoisk</groupId>
 			<artifactId>review-service-api</artifactId>
 			<version>${project.version}</version>
@@ -23,6 +27,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+>>>>>>> refs/remotes/origin/main
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

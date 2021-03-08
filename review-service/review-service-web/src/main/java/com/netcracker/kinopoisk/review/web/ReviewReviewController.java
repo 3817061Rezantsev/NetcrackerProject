@@ -1,0 +1,41 @@
+package com.netcracker.kinopoisk.review.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.netcracker.kinopoisk.review.api.dto.ReviewDto;
+import com.netcracker.kinopoisk.review.api.service.ReviewReviewService;
+
+@RestController
+@RequestMapping(value = "/review")
+public class ReviewReviewController {
+	@Autowired
+	private ReviewReviewService reviewReviewService;
+
+	@GetMapping("/review/{id}")
+	public ReviewDto getFilm(@PathVariable("id") String id) {
+		return reviewReviewService.getReview(id);
+	}
+
+	@PostMapping("/review")
+	public ReviewDto createFilm(@RequestBody ReviewDto reviewDto) {
+		return reviewReviewService.createReview(reviewDto);
+	}
+
+	@PutMapping("/review")
+	public ReviewDto updateFilm(@RequestBody ReviewDto reviewDto) {
+		return reviewReviewService.updateReview(reviewDto);
+	}
+
+	@DeleteMapping("/review/{id}")
+	public void deleteFilm(@PathVariable("id") String id) {
+		reviewReviewService.deleteReview(id);
+	}
+}

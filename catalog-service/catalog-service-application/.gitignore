@@ -1,5 +1,8 @@
 /target/
 /.classpath
 /.project
+<<<<<<< HEAD
+=======
 /logs/
+>>>>>>> refs/remotes/origin/main
 /.settings/
