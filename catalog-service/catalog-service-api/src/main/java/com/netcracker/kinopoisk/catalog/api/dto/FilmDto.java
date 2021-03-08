@@ -1,5 +1,6 @@
 package com.netcracker.kinopoisk.catalog.api.dto;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import lombok.Data;
@@ -13,4 +14,11 @@ public class FilmDto {
 	private ProducerDto producer;
 	private Integer score;
 	private Integer views;
+=======
+import lombok.Data;
+
+@Data
+public class FilmDto {
+	private String id;
+>>>>>>> refs/remotes/origin/main
 }

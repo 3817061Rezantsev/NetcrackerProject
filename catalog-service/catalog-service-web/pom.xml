@@ -17,7 +17,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>KinoPoisk</groupId>
+<<<<<<< HEAD
 			<artifactId>catalog-service-impl</artifactId>
+=======
+			<artifactId>catalog-service-api</artifactId>
+>>>>>>> refs/remotes/origin/main
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

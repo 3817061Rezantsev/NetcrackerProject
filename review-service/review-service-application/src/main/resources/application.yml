@@ -21,6 +21,11 @@ spring:
     url: jdbc:mysql://localhost:4306/review?characterEncoding=UTF-8&useLegacyDatetimeCode=false
     username: root
     password: netcracker123
+<<<<<<< HEAD
+=======
+  liquibase:
+    change-log: classpath:/db/changelog/master.xml
+>>>>>>> refs/remotes/origin/main
 
 logging:
   level:

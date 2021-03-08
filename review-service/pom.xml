@@ -18,6 +18,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+<<<<<<< HEAD
 		<mapstruct.version>1.4.2.Final</mapstruct.version>
 	</properties>
 
@@ -39,3 +40,17 @@
 	</dependencyManagement>
     
 </project>
+=======
+	</properties>
+
+	<modules>
+		<module>review-service-api</module>
+		<module>review-service-impl</module>
+		<module>review-service-application</module>
+		<module>review-service-web</module>
+		<module>review-service-model</module>
+	</modules>
+    
+    
+</project>
+>>>>>>> refs/remotes/origin/main

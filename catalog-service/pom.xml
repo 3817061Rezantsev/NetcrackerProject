@@ -10,6 +10,7 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath />
 	</parent>
+<<<<<<< HEAD
 
 	<groupId>KinoPoisk</groupId>
 	<artifactId>catalog-service</artifactId>
@@ -39,3 +40,23 @@
 		</dependencies>
 	</dependencyManagement>
 </project>
+=======
+	
+	<groupId>KinoPoisk</groupId>
+	<artifactId>catalog-service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<modules>
+		<module>catalog-service-api</module>
+		<module>catalog-service-impl</module>
+		<module>catalog-service-application</module>
+		<module>catalog-service-web</module>
+		<module>catalog-service-model</module>
+	</modules>
+</project>
+>>>>>>> refs/remotes/origin/main
