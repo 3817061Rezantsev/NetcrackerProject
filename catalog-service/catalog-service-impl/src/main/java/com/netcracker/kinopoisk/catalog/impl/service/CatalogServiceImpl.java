@@ -1,7 +1,6 @@
 package com.netcracker.kinopoisk.catalog.impl.service;
 
 import java.util.NoSuchElementException;
-<<<<<<< HEAD
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,8 @@ public class CatalogServiceImpl implements CatalogService {
 
 	@Override
 	public FilmDto getFilm(String id) {
-		Film film = filmRepository.findById(id).orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", id)));
+		Film film = filmRepository.findById(id)
+				.orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", id)));
 		return filmMapper.toDto(film);
 	}
 
@@ -52,7 +52,8 @@ public class CatalogServiceImpl implements CatalogService {
 
 	@Override
 	public FilmDto updateFilm(FilmDto filmDto) {
-		Film film = filmRepository.findById(filmDto.getId()).orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", filmDto.getId())));
+		Film film = filmRepository.findById(filmDto.getId()).orElseThrow(
+				() -> new NoSuchElementException(String.format("Film not found, id: %s", filmDto.getId())));
 		film = filmMapper.toEntity(filmDto);
 		filmRepository.save(film);
 		return filmMapper.toDto(film);
@@ -65,7 +66,8 @@ public class CatalogServiceImpl implements CatalogService {
 
 	@Override
 	public StudioDto getStudio(String id) {
-		Studio studio = studioRepository.findById(id).orElseThrow(() -> new NoSuchElementException(String.format("Studio not found, id: %s", id)));
+		Studio studio = studioRepository.findById(id)
+				.orElseThrow(() -> new NoSuchElementException(String.format("Studio not found, id: %s", id)));
 		return studioMapper.toDto(studio);
 	}
 
@@ -81,7 +83,8 @@ public class CatalogServiceImpl implements CatalogService {
 
 	@Override
 	public StudioDto updateStudio(StudioDto studioDto) {
-		Studio studio = studioRepository.findById(studioDto.getId()).orElseThrow(() -> new NoSuchElementException(String.format("Studio not found, id: %s", studioDto.getId())));
+		Studio studio = studioRepository.findById(studioDto.getId()).orElseThrow(
+				() -> new NoSuchElementException(String.format("Studio not found, id: %s", studioDto.getId())));
 		studio = studioMapper.toEntity(studioDto);
 		studioRepository.save(studio);
 		return studioMapper.toDto(studio);
@@ -94,7 +97,8 @@ public class CatalogServiceImpl implements CatalogService {
 
 	@Override
 	public PersonDto getPerson(String id) {
-		Person person = personRepository.findById(id).orElseThrow(() -> new NoSuchElementException(String.format("Person not found, id: %s", id)));
+		Person person = personRepository.findById(id)
+				.orElseThrow(() -> new NoSuchElementException(String.format("Person not found, id: %s", id)));
 		return personMapper.toDto(person);
 	}
 
@@ -110,7 +114,8 @@ public class CatalogServiceImpl implements CatalogService {
 
 	@Override
 	public PersonDto updatePerson(PersonDto personDto) {
-		Person person = personRepository.findById(personDto.getId()).orElseThrow(() -> new NoSuchElementException(String.format("Person not found, id: %s", personDto.getId())));
+		Person person = personRepository.findById(personDto.getId()).orElseThrow(
+				() -> new NoSuchElementException(String.format("Person not found, id: %s", personDto.getId())));
 		person = personMapper.toEntity(personDto);
 		personRepository.save(person);
 		return personMapper.toDto(person);
@@ -119,39 +124,6 @@ public class CatalogServiceImpl implements CatalogService {
 	@Override
 	public void deletePerson(String id) {
 		personRepository.deleteById(id);
-=======
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.netcracker.kinopoisk.catalog.api.dto.FilmDto;
-import com.netcracker.kinopoisk.catalog.api.dto.StudioDto;
-import com.netcracker.kinopoisk.catalog.api.service.CatalogService;
-import com.netcracker.kinopoisk.catalog.impl.db.Studio;
-import com.netcracker.kinopoisk.catalog.impl.db.StudioRepository;
-
-@Service
-public class CatalogServiceImpl implements CatalogService {
-	@Autowired
-	private StudioRepository studioRepository;
-
-	@Override
-	public FilmDto getFilm(String id) {
-		FilmDto filmDto = new FilmDto();
-		filmDto.setId(id);
-		return filmDto;
-	}
-
-	@Override
-	public StudioDto getStudio(String id) {
-		Studio studio = studioRepository.findById(id).orElseThrow(() -> new NoSuchElementException(String.format("Studio not found, id: %s", id)));
-		StudioDto studioDto = new StudioDto();
-		studioDto.setId(studio.getId());
-		studioDto.setName(studio.getName());
-		studioDto.setOwner(studio.getOwner());
-		studioDto.setLocation(studio.getLocation());
-		return studioDto;
->>>>>>> refs/remotes/origin/main
 	}
 
 }

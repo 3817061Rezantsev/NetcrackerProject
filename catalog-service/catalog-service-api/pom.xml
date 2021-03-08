@@ -18,8 +18,4 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 	</dependencies>
-<<<<<<< HEAD
 </project>
-=======
-</project>
->>>>>>> refs/remotes/origin/main

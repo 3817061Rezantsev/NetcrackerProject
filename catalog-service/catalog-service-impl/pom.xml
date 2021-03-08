@@ -12,7 +12,6 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-<<<<<<< HEAD
 	<dependencies>
 		<dependency>
 			<groupId>KinoPoisk</groupId>
@@ -64,23 +63,4 @@
 		</plugins>
 	</build>
 </project>
-=======
 
-
-	<dependencies>
-		<dependency>
-			<groupId>KinoPoisk</groupId>
-			<artifactId>catalog-service-api</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-	</dependencies>
-</project>
->>>>>>> refs/remotes/origin/main
