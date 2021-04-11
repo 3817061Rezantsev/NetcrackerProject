@@ -3,6 +3,7 @@ package com.netcracker.kinopoisk.catalog.api.service;
 import com.netcracker.kinopoisk.catalog.api.dto.FilmDto;
 import com.netcracker.kinopoisk.catalog.api.dto.PersonDto;
 import com.netcracker.kinopoisk.catalog.api.dto.StudioDto;
+import com.netcracker.kinopoisk.catalog.model.Film;
 
 public interface CatalogService {
 	FilmDto getFilm(String id);

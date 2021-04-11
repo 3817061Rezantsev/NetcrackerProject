@@ -4,11 +4,11 @@ import com.netcracker.kinopoisk.review.api.dto.RoleDto;
 
 public interface ReviewRoleService {
 
-	RoleDto getReview(String id);
+	RoleDto getRole(String id);
 
-	RoleDto createReview(RoleDto roleDto);
+	RoleDto createRole(RoleDto roleDto);
 	
-	RoleDto updateReview(RoleDto roleDto);
+	RoleDto updateRole(RoleDto roleDto);
 	
-	void deleteReview(String id);
+	void deleteRole(String id);
 }

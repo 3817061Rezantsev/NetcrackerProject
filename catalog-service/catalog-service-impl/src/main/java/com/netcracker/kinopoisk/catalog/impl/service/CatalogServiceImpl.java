@@ -63,7 +63,7 @@ public class CatalogServiceImpl implements CatalogService {
 	public void deleteFilm(String id) {
 		filmRepository.deleteById(id);
 	}
-
+	
 	@Override
 	public StudioDto getStudio(String id) {
 		Studio studio = studioRepository.findById(id)
@@ -126,4 +126,5 @@ public class CatalogServiceImpl implements CatalogService {
 		personRepository.deleteById(id);
 	}
 
+	
 }

@@ -14,4 +14,6 @@ public class FilmDto {
 	private ProducerDto producer;
 	private Integer score;
 	private Integer views;
+	private String externalId;
+	private List<GenreDto> genres;
 }
