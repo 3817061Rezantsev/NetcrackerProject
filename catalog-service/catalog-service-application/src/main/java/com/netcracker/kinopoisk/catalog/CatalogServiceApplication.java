@@ -15,5 +15,6 @@ public class CatalogServiceApplication {
 	public static void main(String[] args) {
 		log.info("Application is working in timezone[{}]", TimeZone.getDefault().getID());
 		SpringApplication.run(CatalogServiceApplication.class, args);
+		
 	}
 }
