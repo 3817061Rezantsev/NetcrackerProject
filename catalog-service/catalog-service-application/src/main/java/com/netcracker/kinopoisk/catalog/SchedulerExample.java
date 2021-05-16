@@ -18,7 +18,7 @@ public class SchedulerExample {
 	@Autowired
 	FilmRepository filmRepository;
 
-	@Scheduled(fixedRate = 10000)
+	@Scheduled(fixedRate = 1000000)
 	public void reportCurrentData() {
 		RestTemplate restTemplate = new RestTemplate();
 		String fooResourceUrl = "https://api.themoviedb.org/3/movie/latest?api_key=e710e0a1ac2eb6aa4a2f55251405cabb";

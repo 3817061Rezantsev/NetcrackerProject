@@ -2,8 +2,12 @@ package com.netcracker.kinopoisk.catalog.web;
 
 import java.util.NoSuchElementException;
 
+import javax.validation.ConstraintViolationException;
+
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 public class RestControllerExceptionHandler {
 	private static final String ERROR_CODE_UNDEFINED = "0001";
 	private static final String ERROR_CODE_NOT_FOUND = "0002";
+	private static final String ERROR_BAD_REQUEST = "0003";
 
 	@ExceptionHandler({ NoSuchElementException.class })
 	@ResponseStatus(HttpStatus.NOT_FOUND)
@@ -26,11 +31,24 @@ public class RestControllerExceptionHandler {
 		log.error("NoSuchElementException", ex);
 		return createErrorResponse(ERROR_CODE_NOT_FOUND, ex.getMessage(), HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler({ MethodArgumentNotValidException.class, ConstraintViolationException.class })
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	@ResponseBody
+	ResponseEntity<ErrorDto> handleValidationException(Exception ex) {
+		log.error("MethodArgumentNotValidException", ex);
+		return createErrorResponse(ERROR_BAD_REQUEST, ex.getMessage(), HttpStatus.BAD_REQUEST);
+	}
+
 
 	@ExceptionHandler({ Exception.class })
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	@ResponseBody
 	ResponseEntity<ErrorDto> handleRuntimeException(Exception ex) {
+		Throwable rootCause = ExceptionUtils.getRootCause(ex);
+		if (rootCause instanceof ConstraintViolationException) {
+			return handleValidationException((ConstraintViolationException) rootCause);
+		}
 		log.error("RuntimeException", ex);
 		return createErrorResponse(ERROR_CODE_UNDEFINED, ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
