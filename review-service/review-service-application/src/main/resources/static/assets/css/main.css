@@ -1,0 +1,163 @@
+.rectangle2 {
+position: absolute;
+width: 98px;
+height: 50px;
+left: 1125px;
+top: 25px;
+
+background: #FFFFFF;
+border-radius: 30px;
+}
+
+.bluetext {
+  position: absolute;
+  width: 85px;
+  height: 21px;
+  left: 5%;
+  top: -20%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #000AFF;
+}
+
+.rectangle3 {
+  position: absolute;
+  width: 98px;
+  height: 50px;
+  left: 998px;
+  top: 25px;
+
+  background: #FFFFFF;
+  border-radius: 30px;
+}
+
+.rectangle4 {
+  position: absolute;
+  width: 225px;
+  height: 49px;
+  left: 218px;
+  top: 179px;
+
+  background: #2F80ED;
+  border-radius: 30px;
+}
+
+.whitetext {
+position: absolute;
+width: 165px;
+height: 26px;
+left: 10%;
+top: -20%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.rectangle5 {
+  position: absolute;
+  width: 225px;
+  height: 49px;
+  left: 218px;
+  top: 277px;
+
+  background: #2F80ED;
+  border-radius: 30px;
+}
+
+.rectangle6 {
+position: absolute;
+width: 80%;
+height: 243px;
+left: 218px;
+top: 531px;
+
+background: #6BD3F3;
+}
+
+.bigblue {
+position: absolute;
+width: 125px;
+height: 25px;
+left: 3%;
+top: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+
+color: #000AFF;
+
+}
+
+.rectangle7 {
+position: absolute;
+width: 653px;
+height: 322px;
+left: 540px;
+top: 157px;
+
+background: #210DFF;
+}
+
+.rectangle8 {
+  position: absolute;
+  width: 187px;
+  height: 50px;
+  left: 5%;
+  top: 80%;
+
+  background: #FFFFFF;
+  border-radius: 30px;
+}
+
+.bigbluetext {
+position: absolute;
+width: 125px;
+height: 25px;
+left: 10%;
+top: -20%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+
+color: #000AFF;
+
+}
+
+.rectangle9 {
+position: absolute;
+width: 225px;
+height: 49px;
+left: 218px;
+top: 395px;
+
+background: #2F80ED;
+border-radius: 30px;
+}
+
+.rectangle10 {
+  position: absolute;
+  width: 187px;
+  height: 50px;
+  left: 1006px;
+  top: 33px;
+
+  background: #FFFFFF;
+  border-radius: 30px;
+}

@@ -1,38 +1,40 @@
-2021-03-02 20:18:29 INFO  [main] c.n.k.r.ReviewServiceApplication.logStarting:55 - Starting ReviewServiceApplication on LAPTOP-LPES598N with PID 12928 (C:\Users\Ð¡ÐµÑ€ÐµÐ¶Ð°\git\SecretProject\review-service\review-service-application\target\classes started by Sergey in C:\Users\Ð¡ÐµÑ€ÐµÐ¶Ð°\git\SecretProject\review-service\review-service-application)
-2021-03-02 20:18:29 DEBUG [main] c.n.k.r.ReviewServiceApplication.logStarting:56 - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
-2021-03-02 20:18:29 INFO  [main] c.n.k.r.ReviewServiceApplication.logStartupProfileInfo:655 - The following profiles are active: development
-2021-03-02 20:18:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2021-03-02 20:18:31 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 128ms. Found 6 JPA repository interfaces.
-2021-03-02 20:18:31 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8091 (http)
-2021-03-02 20:18:31 INFO  [main] o.a.catalina.core.StandardService.log:173 - Starting service [Tomcat]
-2021-03-02 20:18:31 INFO  [main] o.a.catalina.core.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-03-02 20:18:31 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/].log:173 - Initializing Spring embedded WebApplicationContext
-2021-03-02 20:18:31 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 2144 ms
-2021-03-02 20:18:32 INFO  [main] o.f.c.i.license.VersionPrinter.info:49 - Flyway Community Edition 6.4.4 by Redgate
-2021-03-02 20:18:32 INFO  [main] com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
-2021-03-02 20:18:36 INFO  [main] com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
-2021-03-02 20:18:37 INFO  [main] o.f.c.i.database.DatabaseFactory.info:49 - Database: jdbc:mysql://localhost:4306/review (MySQL 8.0)
-2021-03-02 20:18:39 INFO  [main] o.f.core.internal.command.DbValidate.info:49 - Successfully validated 2 migrations (execution time 00:00.311s)
-2021-03-02 20:18:39 INFO  [main] o.f.core.internal.command.DbMigrate.info:49 - Current version of schema `review`: 002
-2021-03-02 20:18:39 INFO  [main] o.f.core.internal.command.DbMigrate.info:49 - Schema `review` is up to date. No migration necessary.
-2021-03-02 20:18:40 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
-2021-03-02 20:18:40 INFO  [task-1] o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-02 20:18:40 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-02 20:18:40 INFO  [task-1] org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.20.Final
-2021-03-02 20:18:40 INFO  [task-1] o.h.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-03-02 20:18:40 INFO  [task-1] org.hibernate.dialect.Dialect.<init>:170 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-03-02 20:18:41 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-02 20:18:41 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-02 20:18:41 INFO  [main] o.s.b.a.e.web.EndpointLinksResolver.<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-03-02 20:18:41 INFO  [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-03-02 20:18:41 INFO  [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet.initServletBean:525 - Initializing Servlet 'dispatcherServlet'
-2021-03-02 20:18:41 INFO  [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet.initServletBean:547 - Completed initialization in 12 ms
-2021-03-02 20:18:41 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer.start:220 - Tomcat started on port(s): 8091 (http) with context path ''
-2021-03-02 20:18:41 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositoriesâ€¦
-2021-03-02 20:18:42 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
-2021-03-02 20:18:42 INFO  [main] c.n.k.r.ReviewServiceApplication.logStarted:61 - Started ReviewServiceApplication in 13.264 seconds (JVM running for 14.789)
-2021-03-02 20:18:49 INFO  [RMI TCP Connection(10)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown:159 - Application shutdown requested.
-2021-03-02 20:18:50 INFO  [RMI TCP Connection(10)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-02 20:18:50 INFO  [RMI TCP Connection(10)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
-2021-03-02 20:18:50 INFO  [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
-2021-03-02 20:18:50 INFO  [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2021-05-11 14:09:56 INFO  [main] c.n.k.r.ReviewServiceApplication.logStarting:55 - Starting ReviewServiceApplication on LAPTOP-LPES598N with PID 18116 (C:\Users\Ñåðåæà\git\NetcrackerProject\review-service\review-service-application\target\classes started by Sergey in C:\Users\Ñåðåæà\git\NetcrackerProject\review-service\review-service-application)
+2021-05-11 14:09:56 DEBUG [main] c.n.k.r.ReviewServiceApplication.logStarting:56 - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2021-05-11 14:09:56 INFO  [main] c.n.k.r.ReviewServiceApplication.logStartupProfileInfo:655 - The following profiles are active: development
+2021-05-11 14:09:57 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-05-11 14:09:58 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 179ms. Found 6 JPA repository interfaces.
+2021-05-11 14:09:59 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8091 (http)
+2021-05-11 14:09:59 INFO  [main] o.a.catalina.core.StandardService.log:173 - Starting service [Tomcat]
+2021-05-11 14:09:59 INFO  [main] o.a.catalina.core.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-05-11 14:09:59 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/].log:173 - Initializing Spring embedded WebApplicationContext
+2021-05-11 14:09:59 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 3152 ms
+2021-05-11 14:09:59 INFO  [main] o.f.c.i.license.VersionPrinter.info:49 - Flyway Community Edition 6.4.4 by Redgate
+2021-05-11 14:09:59 INFO  [main] com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2021-05-11 14:10:00 INFO  [main] com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2021-05-11 14:10:00 INFO  [main] o.f.c.i.database.DatabaseFactory.info:49 - Database: jdbc:mysql://localhost:4306/review (MySQL 8.0)
+2021-05-11 14:10:00 INFO  [main] o.f.core.internal.command.DbValidate.info:49 - Successfully validated 2 migrations (execution time 00:00.153s)
+2021-05-11 14:10:00 INFO  [main] o.f.core.internal.command.DbMigrate.info:49 - Current version of schema `review`: 002
+2021-05-11 14:10:00 INFO  [main] o.f.core.internal.command.DbMigrate.info:49 - Schema `review` is up to date. No migration necessary.
+2021-05-11 14:10:01 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-11 14:10:01 INFO  [task-1] o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-11 14:10:01 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-11 14:10:01 INFO  [task-1] org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.20.Final
+2021-05-11 14:10:01 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping.<init>:54 - Adding welcome page: class path resource [static/index.html]
+2021-05-11 14:10:01 INFO  [task-1] o.h.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-05-11 14:10:02 INFO  [task-1] org.hibernate.dialect.Dialect.<init>:170 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-11 14:10:03 INFO  [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-11 14:10:03 INFO  [task-1] o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-11 14:10:03 INFO  [main] o.s.b.a.e.web.EndpointLinksResolver.<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-05-11 14:10:03 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer.start:220 - Tomcat started on port(s): 8091 (http) with context path ''
+2021-05-11 14:10:03 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2021-05-11 14:10:04 INFO  [main] o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2021-05-11 14:10:04 INFO  [main] c.n.k.r.ReviewServiceApplication.logStarted:61 - Started ReviewServiceApplication in 9.265 seconds (JVM running for 11.758)
+2021-05-11 14:10:04 INFO  [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-11 14:10:04 INFO  [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet.initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2021-05-11 14:10:04 INFO  [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet.initServletBean:547 - Completed initialization in 11 ms
+2021-05-11 14:10:21 WARN  [http-nio-0.0.0.0-8091-exec-3] o.s.w.s.m.s.DefaultHandlerExceptionResolver.logException:199 - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2021-05-11 14:11:56 INFO  [RMI TCP Connection(5)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown:159 - Application shutdown requested.
+2021-05-11 14:11:57 INFO  [RMI TCP Connection(5)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-11 14:11:57 INFO  [RMI TCP Connection(5)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-11 14:11:57 INFO  [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2021-05-11 14:11:57 INFO  [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.

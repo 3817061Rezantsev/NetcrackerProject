@@ -1,0 +1,33 @@
+body {
+  font-size: 24px;
+}
+ *,
+ *:before,
+ *:after{
+   box-sizing: border-box;
+ }
+
+.rectangle1 {
+position: absolute;
+width:100%;
+height: 100px;
+left: 0px;
+top: 0px;
+background: #2F80ED;
+}
+
+.kinopoisk {
+position:absolute;
+width: 195px;
+height: 50px;
+left: 5%;
+top: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+
+color: #FFFFFF;
+}

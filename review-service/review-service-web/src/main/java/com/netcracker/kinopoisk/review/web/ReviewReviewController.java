@@ -20,22 +20,22 @@ public class ReviewReviewController {
 	private ReviewReviewService reviewReviewService;
 
 	@GetMapping("/review/{id}")
-	public ReviewDto getFilm(@PathVariable("id") String id) {
+	public ReviewDto getReview(@PathVariable("id") String id) {
 		return reviewReviewService.getReview(id);
 	}
 
 	@PostMapping("/review")
-	public ReviewDto createFilm(@RequestBody ReviewDto reviewDto) {
+	public ReviewDto createReview(@RequestBody ReviewDto reviewDto) {
 		return reviewReviewService.createReview(reviewDto);
 	}
 
 	@PutMapping("/review")
-	public ReviewDto updateFilm(@RequestBody ReviewDto reviewDto) {
+	public ReviewDto updateReview(@RequestBody ReviewDto reviewDto) {
 		return reviewReviewService.updateReview(reviewDto);
 	}
 
 	@DeleteMapping("/review/{id}")
-	public void deleteFilm(@PathVariable("id") String id) {
+	public void deleteReview(@PathVariable("id") String id) {
 		reviewReviewService.deleteReview(id);
 	}
 }

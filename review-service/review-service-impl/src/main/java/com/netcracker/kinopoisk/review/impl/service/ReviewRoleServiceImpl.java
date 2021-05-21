@@ -21,14 +21,14 @@ public class ReviewRoleServiceImpl implements ReviewRoleService {
 	private RoleMapper roleMapper;
 
 	@Override
-	public RoleDto getReview(String id) {
+	public RoleDto getRole(String id) {
 		Role role = roleRepository.findById(id)
 				.orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", id)));
 		return roleMapper.toDto(role);
 	}
 
 	@Override
-	public RoleDto createReview(RoleDto roleDto) {
+	public RoleDto createRole(RoleDto roleDto) {
 		Role role = roleMapper.toEntity(roleDto);
 		if (StringUtils.isEmpty(role.getId())) {
 			role.setId(UUID.randomUUID().toString());
@@ -38,7 +38,7 @@ public class ReviewRoleServiceImpl implements ReviewRoleService {
 	}
 
 	@Override
-	public RoleDto updateReview(RoleDto roleDto) {
+	public RoleDto updateRole(RoleDto roleDto) {
 		Role role = roleRepository.findById(roleDto.getId()).orElseThrow(
 				() -> new NoSuchElementException(String.format("Film not found, id: %s", roleDto.getId())));
 		role = roleMapper.toEntity(roleDto);
@@ -47,7 +47,7 @@ public class ReviewRoleServiceImpl implements ReviewRoleService {
 	}
 
 	@Override
-	public void deleteReview(String id) {
+	public void deleteRole(String id) {
 		roleRepository.deleteById(id);
 	}
 

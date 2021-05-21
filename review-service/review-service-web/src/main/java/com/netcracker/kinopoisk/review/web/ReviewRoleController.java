@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.netcracker.kinopoisk.review.api.dto.FilmDto;
-import com.netcracker.kinopoisk.review.api.service.ReviewFilmService;
+import com.netcracker.kinopoisk.review.api.dto.RoleDto;
+import com.netcracker.kinopoisk.review.api.service.ReviewRoleService;
 
 @RestController
 @RequestMapping(value = "/review")
 public class ReviewRoleController {
 	@Autowired
-	private ReviewFilmService reviewFilmService;
+	private ReviewRoleService reviewRoleService;
 
-	@GetMapping("/film/{id}")
-	public FilmDto getFilm(@PathVariable("id") String id) {
-		return reviewFilmService.getFilm(id);
+	@GetMapping("/role/{id}")
+	public RoleDto getRole(@PathVariable("id") String id) {
+		return reviewRoleService.getRole(id);
 	}
 
-	@PostMapping("/film")
-	public FilmDto createFilm(@RequestBody FilmDto filmDto) {
-		return reviewFilmService.createFilm(filmDto);
+	@PostMapping("/role")
+	public RoleDto createRole(@RequestBody RoleDto roleDto) {
+		return reviewRoleService.createRole(roleDto);
 	}
 
-	@PutMapping("/film")
-	public FilmDto updateFilm(@RequestBody FilmDto filmDto) {
-		return reviewFilmService.updateFilm(filmDto);
+	@PutMapping("/role")
+	public RoleDto updateRole(@RequestBody RoleDto roleDto) {
+		return reviewRoleService.updateRole(roleDto);
 	}
 
-	@DeleteMapping("/film/{id}")
-	public void deleteFilm(@PathVariable("id") String id) {
-		reviewFilmService.deleteFilm(id);
+	@DeleteMapping("/role/{id}")
+	public void deleteRole(@PathVariable("id") String id) {
+		reviewRoleService.deleteRole(id);
 	}
 }

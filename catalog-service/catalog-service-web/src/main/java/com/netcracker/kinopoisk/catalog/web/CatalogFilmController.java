@@ -1,5 +1,7 @@
 package com.netcracker.kinopoisk.catalog.web;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,12 +27,12 @@ public class CatalogFilmController {
 	}
 
 	@PostMapping("/film")
-	public FilmDto createFilm(@RequestBody FilmDto filmDto) {
+	public FilmDto createFilm(@Valid @RequestBody FilmDto filmDto) {
 		return catalogService.createFilm(filmDto);
 	}
 
 	@PutMapping("/film")
-	public FilmDto updateFilm(@RequestBody FilmDto filmDto) {
+	public FilmDto updateFilm(@Valid @RequestBody FilmDto filmDto) {
 		return catalogService.updateFilm(filmDto);
 	}
 
