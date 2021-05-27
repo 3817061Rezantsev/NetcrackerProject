@@ -25,7 +25,7 @@ public class RestControllerExceptionHandler {
 	@ResponseBody
 	ResponseEntity<ErrorDto> handleNoSuchElementException(NoSuchElementException ex) {
 		log.error("NoSuchElementException", ex);
-		return createErrorResponse(ERROR_CODE_NOT_FOUND, ex.getMessage(), HttpStatus.NOT_FOUND);
+		return  createErrorResponse(ERROR_CODE_NOT_FOUND, ex.getMessage(), HttpStatus.NOT_FOUND);
 	}
 
 	@ExceptionHandler({ Exception.class })

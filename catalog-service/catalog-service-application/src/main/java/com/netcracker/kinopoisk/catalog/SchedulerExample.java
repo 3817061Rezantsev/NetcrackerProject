@@ -20,17 +20,17 @@ public class SchedulerExample {
 
 	@Scheduled(fixedRate = 1000000)
 	public void reportCurrentData() {
-		RestTemplate restTemplate = new RestTemplate();
-		String fooResourceUrl = "https://api.themoviedb.org/3/movie/latest?api_key=e710e0a1ac2eb6aa4a2f55251405cabb";
-		MovieDbFilmDto mFilm = restTemplate.getForObject(fooResourceUrl, MovieDbFilmDto.class);
-		Film film = filmRepository.findByExternalId(mFilm.getId());
-		if (film == null) {
-			film = new Film();
-			film.setName(mFilm.getTitle());
-			film.setExternalId(mFilm.getId());
-			filmRepository.save(film);
-		}
-		log.info("Scheduler working: " + mFilm.getId() + " " + mFilm.getTitle());
+//		RestTemplate restTemplate = new RestTemplate();
+//		String fooResourceUrl = "https://api.themoviedb.org/3/movie/latest?api_key=e710e0a1ac2eb6aa4a2f55251405cabb";
+//		MovieDbFilmDto mFilm = restTemplate.getForObject(fooResourceUrl, MovieDbFilmDto.class);
+//		Film film = filmRepository.findByExternalId(mFilm.getId());
+//		if (film == null) {
+//			film = new Film();
+//			film.setName(mFilm.getTitle());
+//			film.setExternalId(mFilm.getId());
+//			filmRepository.save(film);
+//		}
+//		log.info("Scheduler working: " + mFilm.getId() + " " + mFilm.getTitle());
 
 	}
 }
