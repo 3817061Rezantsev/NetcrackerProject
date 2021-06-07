@@ -49,4 +49,11 @@ public class ReviewUserServiceImpl implements ReviewUserService {
 	public void deleteUser(String id) {
 		userRepository.deleteById(id);
 	}
+
+	@Override
+	public User findByUsername(String username) {
+		User result = userRepository.findByEmail(username);
+        
+        return result;
+	}
 }
