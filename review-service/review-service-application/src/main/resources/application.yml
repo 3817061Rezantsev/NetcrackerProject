@@ -55,3 +55,8 @@ server:
 logging:
   level:
     com.netcracker.kinopoisk.review: DEBUG
+
+jwt:
+  token:
+    secret: jwtappdemo
+    expired: 3600000
