@@ -1,21 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lerning</title>
-    <!-- версия для разработки, включает отображение полезных предупреждений в консоли -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
-</head>
-<body>
-<div id="app"></div>
-<video controls width="400" height="400"
-       autoplay loop muted preload="auto"
-       poster="poster.png">
-  <source src="ILUMILAND - Позови кота с собой..mp4" type="video/mp4">
-  <source src="ILUMILAND - Позови кота с собой..webm" type="video/webm">
-  <p>Your browser doesn't support HTML video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
-</video>
-<script src="js/main.js"></script>
-</body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/css/master.css" type="text/css">
+  </head>
+  <body>
+    <div id="vue">
+
+    
+	<button type="button" @click="getFilm">Film</button>
+	<ul>
+        <li >id: {{ film.id }}</li>
+        <li >name: {{ film.name }}</li>
+        <li >studio: {{film.studio}}</li>
+        <li >actors: {{film.actors}}</li>
+        <li >producer: {{film.producer}}</li>
+        <li >score: {{film.score}}</li>
+        <li >views: {{film.views}}</li>
+        
+    </ul>
+
+    <script type="text/javascript">
+      var app = new Vue({
+        el: '#vue',
+        data: {
+          isActive: false,
+          hashtags: [],
+          cities: [],
+          film: [],	
+          url: {
+            
+            film:'http://localhost:8090/catalog/film/a165e35c-595b-4fe3-ac9d-a4bb51431a1a'
+          }
+        },
+        methods: {
+          
+           getFilm(){
+            axios.get(this.url.film).then((response) => {
+              console.log(response.data);
+              this.film = response.data;
+            });
+          }
+        }
+      })
+    </script>
+  </body>
 </html>
