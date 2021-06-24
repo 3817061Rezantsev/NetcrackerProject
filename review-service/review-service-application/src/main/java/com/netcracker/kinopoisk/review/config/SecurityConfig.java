@@ -17,6 +17,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final JwtTokenProvider jwtTokenProvider;
 
     private static final String LOGIN_ENDPOINT = "/api/auth/login";
+    private static final String SWAGGER_ENDPOINT = "/swagger-ui/**";
+    private static final String FILM_ENDPOINT = "/review/film/**";
+    private static final String COMMENT_ENDPOINT = "/review/comment/**";
+    private static final String REVIEW_ENDPOINT = "/review/review/**";
+    private static final String ROLE_ENDPOINT = "/review/role/**";
+    private static final String USER_ENDPOINT = "/review/user/**";
 
     @Autowired
     public SecurityConfig(JwtTokenProvider jwtTokenProvider) {
@@ -37,6 +43,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
+                .antMatchers(SWAGGER_ENDPOINT).permitAll()
+                .antMatchers(FILM_ENDPOINT).permitAll()
+                .antMatchers(COMMENT_ENDPOINT).permitAll()
+                .antMatchers(REVIEW_ENDPOINT).permitAll()
+                .antMatchers(USER_ENDPOINT).permitAll()
+                .antMatchers(ROLE_ENDPOINT).permitAll()
                 .antMatchers(LOGIN_ENDPOINT).permitAll()
                 .anyRequest().authenticated()
                 .and()
