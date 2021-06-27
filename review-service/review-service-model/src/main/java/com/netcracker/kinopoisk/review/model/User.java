@@ -5,6 +5,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -14,8 +17,12 @@ import lombok.Data;
 public class User {
 	@Id
 	private String id;
+	@NotBlank
+	@Size(min = 1, max = 45)
 	private String firstName;
+	@Size(min = 1, max = 45)
 	private String lastName;
+	@Email
 	private String email;
 	private String passwordHash;
 	private Boolean locked;

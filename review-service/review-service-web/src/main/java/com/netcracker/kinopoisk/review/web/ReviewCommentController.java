@@ -20,7 +20,7 @@ public class ReviewCommentController {
 	@Autowired
 	private ReviewCommentService reviewCommentService;
 
-	@GetMapping("/comment/{id}")
+	@GetMapping("/view/comment/{id}")
 	public CommentDto getComment(@PathVariable("id") String id) {
 		return reviewCommentService.getComment(id);
 	}
@@ -30,12 +30,12 @@ public class ReviewCommentController {
 		return reviewCommentService.createComment(commentDto);
 	}
 
-	@PutMapping("/comment")
+	@PutMapping("/admin/comment")
 	public CommentDto updateComment(@RequestBody CommentDto commentDto) {
 		return reviewCommentService.updateComment(commentDto);
 	}
 
-	@DeleteMapping("/comment/{id}")
+	@DeleteMapping("/admin/comment/{id}")
 	public void deleteComment(@PathVariable("id") String id) {
 		reviewCommentService.deleteComment(id);
 	}

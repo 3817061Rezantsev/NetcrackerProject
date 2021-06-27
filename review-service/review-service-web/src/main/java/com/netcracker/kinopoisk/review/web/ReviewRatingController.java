@@ -19,12 +19,12 @@ public class ReviewRatingController {
 	@Autowired
 	private ReviewRatingService reviewRatingService;
 
-	@GetMapping("/rating/{id}")
+	@GetMapping("/view/rating/{id}")
 	public RatingDto getRating(@PathVariable("id") String id) {
 		return reviewRatingService.getRating(id);
 	}
 
-	@PostMapping("/rating")
+	@PostMapping("/admin/rating")
 	public RatingDto createRating(@RequestBody RatingDto ratingDto) {
 		return reviewRatingService.createRating(ratingDto);
 	}
@@ -34,7 +34,7 @@ public class ReviewRatingController {
 		return reviewRatingService.updateRating(ratingDto);
 	}
 
-	@DeleteMapping("/rating/{id}")
+	@DeleteMapping("/admin/rating/{id}")
 	public void deleteRating(@PathVariable("id") String id) {
 		reviewRatingService.deleteRating(id);
 	}

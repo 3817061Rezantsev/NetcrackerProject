@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.PositiveOrZero;
 
 import lombok.Data;
 
@@ -22,6 +23,8 @@ public class Review {
 	private Film film;
 	private String text;
 	private String status;
+	@PositiveOrZero
 	private Integer likes;
+	@PositiveOrZero
 	private Integer dislikes;
 }
