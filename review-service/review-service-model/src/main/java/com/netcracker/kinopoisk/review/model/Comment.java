@@ -5,6 +5,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -20,5 +22,7 @@ public class Comment {
 	@ManyToOne
 	@JoinColumn(name = "review_id")
 	private Review review;
+	@NotBlank
+	@Size(min = 1, max = 45)
 	private String text;
 }

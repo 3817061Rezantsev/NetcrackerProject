@@ -20,22 +20,22 @@ public class ReviewFilmController {
 	@Autowired
 	private ReviewFilmService reviewFilmService;
 
-	@GetMapping("/film/{id}")
+	@GetMapping("/view/film/{id}")
 	public FilmDto getFilm(@PathVariable("id") String id) {
 		return reviewFilmService.getFilm(id);
 	}
 
-	@PostMapping("/film")
+	@PostMapping("/admin/film")
 	public FilmDto createFilm(@RequestBody FilmDto filmDto) {
 		return reviewFilmService.createFilm(filmDto);
 	}
 
-	@PutMapping("/film")
+	@PutMapping("/admin/film")
 	public FilmDto updateFilm(@RequestBody FilmDto filmDto) {
 		return reviewFilmService.updateFilm(filmDto);
 	}
 
-	@DeleteMapping("/film/{id}")
+	@DeleteMapping("/admin/film/{id}")
 	public void deleteFilm(@PathVariable("id") String id) {
 		reviewFilmService.deleteFilm(id);
 	}

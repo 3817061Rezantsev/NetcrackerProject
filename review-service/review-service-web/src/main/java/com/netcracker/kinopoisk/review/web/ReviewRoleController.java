@@ -19,22 +19,22 @@ public class ReviewRoleController {
 	@Autowired
 	private ReviewRoleService reviewRoleService;
 
-	@GetMapping("/role/{id}")
+	@GetMapping("/view/role/{id}")
 	public RoleDto getRole(@PathVariable("id") String id) {
 		return reviewRoleService.getRole(id);
 	}
 
-	@PostMapping("/role")
+	@PostMapping("/admin/role")
 	public RoleDto createRole(@RequestBody RoleDto roleDto) {
 		return reviewRoleService.createRole(roleDto);
 	}
 
-	@PutMapping("/role")
+	@PutMapping("/admin/role")
 	public RoleDto updateRole(@RequestBody RoleDto roleDto) {
 		return reviewRoleService.updateRole(roleDto);
 	}
 
-	@DeleteMapping("/role/{id}")
+	@DeleteMapping("/admin/role/{id}")
 	public void deleteRole(@PathVariable("id") String id) {
 		reviewRoleService.deleteRole(id);
 	}

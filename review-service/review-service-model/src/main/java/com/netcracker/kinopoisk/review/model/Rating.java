@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.PositiveOrZero;
 
 import lombok.Data;
 
@@ -17,5 +18,6 @@ public class Rating {
 	@ManyToOne
 	@JoinColumn(name = "film_id")
 	private Film filmId;
+	@PositiveOrZero
 	private String score;
 }

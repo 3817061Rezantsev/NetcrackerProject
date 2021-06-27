@@ -19,7 +19,7 @@ public class ReviewReviewController {
 	@Autowired
 	private ReviewReviewService reviewReviewService;
 
-	@GetMapping("/review/{id}")
+	@GetMapping("/view/review/{id}")
 	public ReviewDto getReview(@PathVariable("id") String id) {
 		return reviewReviewService.getReview(id);
 	}
@@ -29,12 +29,12 @@ public class ReviewReviewController {
 		return reviewReviewService.createReview(reviewDto);
 	}
 
-	@PutMapping("/review")
+	@PutMapping("/admin/review")
 	public ReviewDto updateReview(@RequestBody ReviewDto reviewDto) {
 		return reviewReviewService.updateReview(reviewDto);
 	}
 
-	@DeleteMapping("/review/{id}")
+	@DeleteMapping("/admin/review/{id}")
 	public void deleteReview(@PathVariable("id") String id) {
 		reviewReviewService.deleteReview(id);
 	}

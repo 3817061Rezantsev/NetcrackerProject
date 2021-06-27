@@ -23,6 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String REVIEW_ENDPOINT = "/review/review/**";
     private static final String ROLE_ENDPOINT = "/review/role/**";
     private static final String USER_ENDPOINT = "/review/user/**";
+    private static final String RATING_ENDPOINT = "/review/rating/**";
+    private static final String VIEW_ENDPOINT = "/review/view/**";
+    private static final String ADMIN_ENDPOINT = "/review/admin/**";
 
     @Autowired
     public SecurityConfig(JwtTokenProvider jwtTokenProvider) {
@@ -44,12 +47,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(SWAGGER_ENDPOINT).permitAll()
-                .antMatchers(FILM_ENDPOINT).permitAll()
-                .antMatchers(COMMENT_ENDPOINT).permitAll()
-                .antMatchers(REVIEW_ENDPOINT).permitAll()
-                .antMatchers(USER_ENDPOINT).permitAll()
-                .antMatchers(ROLE_ENDPOINT).permitAll()
+                .antMatchers(VIEW_ENDPOINT).permitAll()
                 .antMatchers(LOGIN_ENDPOINT).permitAll()
+                .antMatchers(ADMIN_ENDPOINT).hasAuthority("admin")
                 .anyRequest().authenticated()
                 .and()
                 .apply(new JwtConfigurer(jwtTokenProvider));

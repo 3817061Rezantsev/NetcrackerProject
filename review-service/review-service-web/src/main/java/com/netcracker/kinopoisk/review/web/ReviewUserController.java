@@ -19,7 +19,7 @@ public class ReviewUserController {
 	@Autowired
 	private ReviewUserService reviewUserService;
 
-	@GetMapping("/user/{id}")
+	@GetMapping("/view/user/{id}")
 	public UserDto getUser(@PathVariable("id") String id) {
 		return reviewUserService.getUser(id);
 	}
