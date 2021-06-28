@@ -10,4 +10,6 @@ public class MovieDbFilmDto {
 	private String status;
 	private Integer vote_count;
 	private Integer budget;
+	private Double popularity;
+	private String imdbId;
 }
