@@ -1,14 +1,21 @@
 package com.netcracker.kinopoisk.review.web;
 
+import java.sql.SQLException;
+import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.validation.ConstraintViolationException;
+
+import org.hibernate.exception.DataException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-
 
 import com.netcracker.kinopoisk.review.api.dto.ErrorDto;
 
@@ -19,15 +26,46 @@ import lombok.extern.slf4j.Slf4j;
 public class RestControllerExceptionHandler {
 	private static final String ERROR_CODE_UNDEFINED = "0001";
 	private static final String ERROR_CODE_NOT_FOUND = "0002";
+	private static final String ERROR_BAD_REQUEST = "0003";
+	private static final String ERROR_DB = "DB Error";
 
 	@ExceptionHandler({ NoSuchElementException.class })
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	@ResponseBody
 	ResponseEntity<ErrorDto> handleNoSuchElementException(NoSuchElementException ex) {
 		log.error("NoSuchElementException", ex);
-		return  createErrorResponse(ERROR_CODE_NOT_FOUND, ex.getMessage(), HttpStatus.NOT_FOUND);
+		return createErrorResponse(ERROR_CODE_NOT_FOUND, ex.getMessage(), HttpStatus.NOT_FOUND);
 	}
 
+	@ExceptionHandler({ SQLException.class, DataAccessException.class })
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ResponseBody
+	public ResponseEntity<ErrorDto> databaseError(Exception ex) {
+		log.error("SQLException", ex);
+		return createErrorResponse(ERROR_DB, "Could not execute request to DB", HttpStatus.BAD_REQUEST);
+	}
+
+	@ExceptionHandler({ MethodArgumentNotValidException.class })
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	@ResponseBody
+	ResponseEntity<ErrorDto> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
+		log.error("MethodArgumentNotValidException", ex);
+		List<FieldError> fieldErrors = ex.getBindingResult().getFieldErrors();
+		String e = "";
+		for (FieldError fe : fieldErrors) {
+			e += fe.getField() + " " + fe.getDefaultMessage() + ";  ";
+		}
+		return createErrorResponse(ERROR_BAD_REQUEST, e, HttpStatus.BAD_REQUEST);
+	}
+
+	@ExceptionHandler({ ConstraintViolationException.class })
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	@ResponseBody
+	ResponseEntity<ErrorDto> handleConstraintViolationException(ConstraintViolationException ex) {
+		log.error("ConstraintViolationException", ex);
+		return createErrorResponse(ERROR_BAD_REQUEST, ex.getLocalizedMessage(), HttpStatus.BAD_REQUEST);
+	}
+	
 	@ExceptionHandler({ Exception.class })
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	@ResponseBody
