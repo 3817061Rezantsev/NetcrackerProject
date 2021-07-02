@@ -8,8 +8,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.netcracker.kinopoisk.catalog.api.dto.FilmDto;
+import com.netcracker.kinopoisk.catalog.api.dto.FilmPatchDto;
 import com.netcracker.kinopoisk.catalog.api.dto.PersonDto;
+import com.netcracker.kinopoisk.catalog.api.dto.PersonPatchDto;
 import com.netcracker.kinopoisk.catalog.api.dto.StudioDto;
+import com.netcracker.kinopoisk.catalog.api.dto.StudioPatchDto;
 import com.netcracker.kinopoisk.catalog.api.service.CatalogService;
 import com.netcracker.kinopoisk.catalog.impl.db.FilmRepository;
 import com.netcracker.kinopoisk.catalog.impl.db.PeopleRepository;
@@ -25,13 +28,19 @@ public class CatalogServiceImpl implements CatalogService {
 	@Autowired
 	private FilmMapper filmMapper;
 	@Autowired
+	private FilmPatchMapper filmPatchMapper;
+	@Autowired
 	private StudioRepository studioRepository;
 	@Autowired
 	private StudioMapper studioMapper;
 	@Autowired
+	private StudioPatchMapper studioPatchMapper;
+	@Autowired
 	private PeopleRepository personRepository;
 	@Autowired
 	private PersonMapper personMapper;
+	@Autowired
+	private PersonPatchMapper personPatchMapper;
 
 	@Override
 	public FilmDto getFilm(String id) {
@@ -51,10 +60,10 @@ public class CatalogServiceImpl implements CatalogService {
 	}
 
 	@Override
-	public FilmDto updateFilm(FilmDto filmDto) {
+	public FilmDto updateFilm(FilmPatchDto filmDto) {
 		Film film = filmRepository.findById(filmDto.getId()).orElseThrow(
 				() -> new NoSuchElementException(String.format("Film not found, id: %s", filmDto.getId())));
-		film = filmMapper.toEntity(filmDto);
+		filmPatchMapper.patchEntity(film, filmDto);
 		filmRepository.save(film);
 		return filmMapper.toDto(film);
 	}
@@ -63,7 +72,7 @@ public class CatalogServiceImpl implements CatalogService {
 	public void deleteFilm(String id) {
 		filmRepository.deleteById(id);
 	}
-	
+
 	@Override
 	public StudioDto getStudio(String id) {
 		Studio studio = studioRepository.findById(id)
@@ -82,10 +91,10 @@ public class CatalogServiceImpl implements CatalogService {
 	}
 
 	@Override
-	public StudioDto updateStudio(StudioDto studioDto) {
+	public StudioDto updateStudio(StudioPatchDto studioDto) {
 		Studio studio = studioRepository.findById(studioDto.getId()).orElseThrow(
 				() -> new NoSuchElementException(String.format("Studio not found, id: %s", studioDto.getId())));
-		studio = studioMapper.toEntity(studioDto);
+		studioPatchMapper.patchEntity(studio, studioDto);
 		studioRepository.save(studio);
 		return studioMapper.toDto(studio);
 	}
@@ -113,10 +122,10 @@ public class CatalogServiceImpl implements CatalogService {
 	}
 
 	@Override
-	public PersonDto updatePerson(PersonDto personDto) {
+	public PersonDto updatePerson(PersonPatchDto personDto) {
 		Person person = personRepository.findById(personDto.getId()).orElseThrow(
 				() -> new NoSuchElementException(String.format("Person not found, id: %s", personDto.getId())));
-		person = personMapper.toEntity(personDto);
+		personPatchMapper.patchEntity(person, personDto);
 		personRepository.save(person);
 		return personMapper.toDto(person);
 	}
@@ -126,5 +135,4 @@ public class CatalogServiceImpl implements CatalogService {
 		personRepository.deleteById(id);
 	}
 
-	
 }

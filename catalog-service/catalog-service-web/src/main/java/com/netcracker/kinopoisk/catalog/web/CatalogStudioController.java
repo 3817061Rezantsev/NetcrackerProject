@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.netcracker.kinopoisk.catalog.api.dto.StudioDto;
+import com.netcracker.kinopoisk.catalog.api.dto.StudioPatchDto;
 import com.netcracker.kinopoisk.catalog.api.service.CatalogService;
 
 @RestController
@@ -30,7 +31,7 @@ public class CatalogStudioController {
 	}
 
 	@PutMapping("/studio")
-	public StudioDto updateStudio(@RequestBody StudioDto studioDto) {
+	public StudioDto updateStudio(@RequestBody StudioPatchDto studioDto) {
 		return catalogService.updateStudio(studioDto);
 	}
 

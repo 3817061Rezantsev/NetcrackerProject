@@ -3,11 +3,8 @@ package com.netcracker.kinopoisk.catalog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
-import com.netcracker.kinopoisk.catalog.api.dto.MovieDbFilmDto;
 import com.netcracker.kinopoisk.catalog.impl.db.FilmRepository;
-import com.netcracker.kinopoisk.catalog.model.Film;
 
 import lombok.extern.slf4j.Slf4j;
 

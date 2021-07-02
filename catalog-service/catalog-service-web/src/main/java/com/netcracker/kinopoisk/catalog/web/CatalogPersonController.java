@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.netcracker.kinopoisk.catalog.api.dto.PersonDto;
+import com.netcracker.kinopoisk.catalog.api.dto.PersonPatchDto;
 import com.netcracker.kinopoisk.catalog.api.service.CatalogService;
 
 @RestController
@@ -30,7 +31,7 @@ public class CatalogPersonController {
 	}
 
 	@PutMapping("/person")
-	public PersonDto updatePerson(@RequestBody PersonDto personDto) {
+	public PersonDto updatePerson(@RequestBody PersonPatchDto personDto) {
 		return catalogService.updatePerson(personDto);
 	}
 

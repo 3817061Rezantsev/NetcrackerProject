@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.netcracker.kinopoisk.catalog.api.dto.FilmDto;
+import com.netcracker.kinopoisk.catalog.api.dto.FilmPatchDto;
 import com.netcracker.kinopoisk.catalog.api.service.CatalogService;
 
 @RestController
@@ -32,7 +33,7 @@ public class CatalogFilmController {
 	}
 
 	@PutMapping("/film")
-	public FilmDto updateFilm(@Valid @RequestBody FilmDto filmDto) {
+	public FilmDto updateFilm(@Valid @RequestBody FilmPatchDto filmDto) {
 		return catalogService.updateFilm(filmDto);
 	}
 

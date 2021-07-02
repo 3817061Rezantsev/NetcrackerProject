@@ -1,8 +1,11 @@
 package com.netcracker.kinopoisk.catalog.api.service;
 
 import com.netcracker.kinopoisk.catalog.api.dto.FilmDto;
+import com.netcracker.kinopoisk.catalog.api.dto.FilmPatchDto;
 import com.netcracker.kinopoisk.catalog.api.dto.PersonDto;
+import com.netcracker.kinopoisk.catalog.api.dto.PersonPatchDto;
 import com.netcracker.kinopoisk.catalog.api.dto.StudioDto;
+import com.netcracker.kinopoisk.catalog.api.dto.StudioPatchDto;
 import com.netcracker.kinopoisk.catalog.model.Film;
 
 public interface CatalogService {
@@ -10,7 +13,7 @@ public interface CatalogService {
 
 	FilmDto createFilm(FilmDto filmDto);
 
-	FilmDto updateFilm(FilmDto filmDto);
+	FilmDto updateFilm(FilmPatchDto filmDto);
 
 	void deleteFilm(String id);
 
@@ -18,7 +21,7 @@ public interface CatalogService {
 
 	StudioDto createStudio(StudioDto studioDto);
 
-	StudioDto updateStudio(StudioDto studioDto);
+	StudioDto updateStudio(StudioPatchDto studioDto);
 
 	void deleteStudio(String id);
 
@@ -26,7 +29,7 @@ public interface CatalogService {
 
 	PersonDto createPerson(PersonDto personDto);
 
-	PersonDto updatePerson(PersonDto personDto);
+	PersonDto updatePerson(PersonPatchDto personDto);
 
 	void deletePerson(String id);
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.netcracker.kinopoisk.review.api.dto.UserDto;
+import com.netcracker.kinopoisk.review.api.dto.UserPatchDto;
 import com.netcracker.kinopoisk.review.api.service.ReviewUserService;
 import com.netcracker.kinopoisk.review.impl.db.UserRepository;
 import com.netcracker.kinopoisk.review.model.User;
@@ -18,6 +19,8 @@ public class ReviewUserServiceImpl implements ReviewUserService {
 	private UserRepository userRepository;
 	@Autowired
 	private UserMapper userMapper;
+	@Autowired
+	private UserPatchMapper userPatchMapper;
 
 	@Override
 	public UserDto getUser(String id) {
@@ -37,10 +40,10 @@ public class ReviewUserServiceImpl implements ReviewUserService {
 	}
 
 	@Override
-	public UserDto updateUser(UserDto userDto) {
+	public UserDto updateUser(UserPatchDto userDto) {
 		User user = userRepository.findById(userDto.getId()).orElseThrow(
 				() -> new NoSuchElementException(String.format("Film not found, id: %s", userDto.getId())));
-		user = userMapper.toEntity(userDto);
+		userPatchMapper.patchEntity(user, userDto);
 		userRepository.save(user);
 		return userMapper.toDto(user);
 	}
@@ -53,7 +56,7 @@ public class ReviewUserServiceImpl implements ReviewUserService {
 	@Override
 	public User findByUsername(String username) {
 		User result = userRepository.findByEmail(username);
-        
-        return result;
+
+		return result;
 	}
 }

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.netcracker.kinopoisk.review.api.dto.ReviewDto;
+import com.netcracker.kinopoisk.review.api.dto.ReviewPatchDto;
 import com.netcracker.kinopoisk.review.api.service.ReviewReviewService;
 import com.netcracker.kinopoisk.review.impl.db.ReviewRepository;
 import com.netcracker.kinopoisk.review.model.Review;
-
 
 @Service
 public class ReviewReviewServiceImpl implements ReviewReviewService {
@@ -19,10 +19,13 @@ public class ReviewReviewServiceImpl implements ReviewReviewService {
 	private ReviewRepository reviewRepository;
 	@Autowired
 	private ReviewMapper reviewMapper;
-	
+	@Autowired
+	private ReviewPatchMapper reviewPatchMapper;
+
 	@Override
 	public ReviewDto getReview(String id) {
-		Review review = reviewRepository.findById(id).orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", id)));
+		Review review = reviewRepository.findById(id)
+				.orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", id)));
 		return reviewMapper.toDto(review);
 	}
 
@@ -37,9 +40,10 @@ public class ReviewReviewServiceImpl implements ReviewReviewService {
 	}
 
 	@Override
-	public ReviewDto updateReview(ReviewDto reviewDto) {
-		Review review = reviewRepository.findById(reviewDto.getId()).orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", reviewDto.getId())));
-		review = reviewMapper.toEntity(reviewDto);
+	public ReviewDto updateReview(ReviewPatchDto reviewDto) {
+		Review review = reviewRepository.findById(reviewDto.getId()).orElseThrow(
+				() -> new NoSuchElementException(String.format("Film not found, id: %s", reviewDto.getId())));
+		reviewPatchMapper.patchEntity(review, reviewDto);
 		reviewRepository.save(review);
 		return reviewMapper.toDto(review);
 	}
