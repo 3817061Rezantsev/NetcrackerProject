@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.netcracker.kinopoisk.review.api.dto.UserDto;
+import com.netcracker.kinopoisk.review.api.dto.UserPatchDto;
 import com.netcracker.kinopoisk.review.api.service.ReviewUserService;
 
 @RestController
@@ -30,7 +31,7 @@ public class ReviewUserController {
 	}
 
 	@PutMapping("/user")
-	public UserDto updateUser(@RequestBody UserDto userDto) {
+	public UserDto updateUser(@RequestBody UserPatchDto userDto) {
 		return reviewUserService.updateUser(userDto);
 	}
 

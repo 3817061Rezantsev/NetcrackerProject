@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.netcracker.kinopoisk.review.api.dto.CommentDto;
+import com.netcracker.kinopoisk.review.api.dto.CommentPatchDto;
 import com.netcracker.kinopoisk.review.api.service.ReviewCommentService;
 import com.netcracker.kinopoisk.review.impl.db.CommentRepository;
 import com.netcracker.kinopoisk.review.model.Comment;
-
 
 @Service
 public class ReviewCommentServiceImpl implements ReviewCommentService {
@@ -19,11 +19,13 @@ public class ReviewCommentServiceImpl implements ReviewCommentService {
 	private CommentRepository commentRepository;
 	@Autowired
 	private CommentMapper commentMapper;
-
+	@Autowired
+	private CommentPatchMapper commentPatchMapper;
 
 	@Override
 	public CommentDto getComment(String id) {
-		Comment comment = commentRepository.findById(id).orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", id)));
+		Comment comment = commentRepository.findById(id)
+				.orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", id)));
 		return commentMapper.toDto(comment);
 	}
 
@@ -38,9 +40,10 @@ public class ReviewCommentServiceImpl implements ReviewCommentService {
 	}
 
 	@Override
-	public CommentDto updateComment(CommentDto commentDto) {
-		Comment comment = commentRepository.findById(commentDto.getId()).orElseThrow(() -> new NoSuchElementException(String.format("Film not found, id: %s", commentDto.getId())));
-		comment = commentMapper.toEntity(commentDto);
+	public CommentDto updateComment(CommentPatchDto commentDto) {
+		Comment comment = commentRepository.findById(commentDto.getId()).orElseThrow(
+				() -> new NoSuchElementException(String.format("Film not found, id: %s", commentDto.getId())));
+		commentPatchMapper.patchEntity(comment, commentDto);
 		commentRepository.save(comment);
 		return commentMapper.toDto(comment);
 	}
@@ -48,7 +51,7 @@ public class ReviewCommentServiceImpl implements ReviewCommentService {
 	@Override
 	public void deleteComment(String id) {
 		commentRepository.deleteById(id);
-		
+
 	}
 
 }
